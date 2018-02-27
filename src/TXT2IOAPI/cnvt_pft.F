@@ -52,7 +52,7 @@ C.........  LOCAL VARIABLES and their descriptions:
       CHARACTER*30     SEGMENT( MXTCOL )     ! Input line fields
 
       INTEGER, PARAMETER :: NFLD  = MXTCOL-3 ! Number of output variables
-      INTEGER,         XREF(NFLD)
+      INTEGER          XREF(NFLD)
       INTEGER       :: NSTEP = NFLD
       INTEGER, PARAMETER :: NVARS = 1        ! Number of output variables
 
@@ -109,7 +109,8 @@ C.........  LOCAL VARIABLES and their descriptions:
                   N = INDEX1(TRIM( MESG ),N_MGN_PFT ,MGN_PFT)
                   XREF( S ) = N
                ELSE
-                  STOP MESG//' is not valid'
+                  WRITE(*,*) MESG//' is not valid'
+                  STOP
                ENDIF
                PRINT*,'READ ',MGN_PFT(N)
             ENDDO

@@ -31,7 +31,7 @@ cccccccccccccccccccccccccccccccccccccc
 
       integer, parameter :: MAXSTYPES = 11 
 
-      logical MCIP_rad,SAT_par,ENVYN,INITIAL_HOUR,ifsoil
+      logical MCIP_rad,SAT_par,ENVYN,INITIAL_HOUR,ifsoil, lfirst
       real, allocatable::  srad(:,:)
       real, allocatable::  par(:,:)
       real, allocatable::  reftemp(:,:)
@@ -380,7 +380,7 @@ c      if(r_sdate.eq.sdate) then  !first day
             PULSEDATE(i,j)=0.
             PULSETIME(i,j)=0.
             soilcat=soiltyp(i,j)
-            if(isoil) then
+            if(ifsoil) then
               if( soilcat > 0 .and. soilcat <= MAXSTYPES ) then 
                 PREC_ADJ(i,j) = 2.
               else

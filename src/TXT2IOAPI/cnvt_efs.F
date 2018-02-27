@@ -48,7 +48,7 @@ C.........  LOCAL VARIABLES and their descriptions:
       ! CID, I, J, LAT, LONG, SR, TEMP, 20 EFS
       INTEGER, PARAMETER :: MXTCOL = 27      ! Columns in an input line
       CHARACTER*30     SEGMENT( MXTCOL )     ! Input line fields
-      INTEGER,         XREF(MXTCOL)
+      INTEGER          XREF(MXTCOL)
 
       INTEGER, PARAMETER :: NVARS = 24       ! Number of output variables
       CHARACTER*16 VNAME( NVARS ) ! Output variables
@@ -137,7 +137,8 @@ C.........  LOCAL VARIABLES and their descriptions:
                   XREF( S ) = N + 4
                   VNAME( XREF(S) ) = 'EF_'//TRIM( MESG )
                ELSE
-                  STOP MESG//' is not valid'
+                  write(*,*)MESG//' is not valid'
+                  STOP
                ENDIF
 
                PRINT*,'READ VNAME:',VNAME(XREF(S))
