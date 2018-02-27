@@ -1,0 +1,47 @@
+SHELL=/bin/sh
+FC= pgf90
+FFLAGS= -O -Mvect=sse -Mextend -Msecond_underscore -Mlfs -Bstatic_pgi
+
+PROGRAM= emproc
+LIBS = -L/data3/home/xjiang/bin/ioapi_3.1/Linux2_x86pg_pgcc_nomp -lioapi \
+       -L/usr/local/netcdf-4.1.1/lib -lnetcdf
+INCLUDE = -I/data3/home/xjiang/bin/ioapi_3.1/ioapi/fixed_src \
+          -I/usr/local/netcdf-4.1.1/include \
+          -I$(CURDIR)/INCLDIR
+
+OBJS = \
+     gamma_etc.o \
+     checkmem.o \
+     canopy.o \
+     solarangle.o \
+     findlai.o \
+     soilnox_fx.o \
+     soilnox.o \
+     $(PROGRAM).o
+
+MODULES= *mod.f
+
+#-----------------------------------------------------------------------
+# line to allow file.mod files to be recognised by GNU make
+%.o : %.mod
+#-----------------------------------------------------------------------
+
+.SUFFIXES : .f .f .o 
+
+.f.o:
+	$(FC) -c $(FFLAGS) $(INCLUDE) $<
+.F.o:
+	$(FC) -c $(FFLAGS) $(INCLUDE) $<
+
+#-----------------------------------------------------------------------
+
+$(PROGRAM):	$(OBJS)
+	$(FC) $(FFLAGS) $(INCLUDE) -o $(@) $(OBJS) $(LIBS)
+
+#-----------------------------------------------------------------------
+
+clean:
+	rm -f $(PROGRAM) *.o *.mod *.core
+#-----------------------------------------------------------------------
+
+

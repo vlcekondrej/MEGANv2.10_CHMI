@@ -1,0 +1,7 @@
+# object files
+*.o
+# modules
+*.mod
+# executable
+met2mgn
+makefile

@@ -1,0 +1,489 @@
+C=======================================================================
+C  LD_FCT.EXT
+C  This include file contains "light dependent" factors.
+C
+C
+C
+C  MEGAN v2.02
+C  INPUT version 210
+C
+C  History:
+C  Who          When       What
+C  ---------------------------------------------------------------------
+C  Tan          12/02/06 - Creates this file
+C  Guenther A.  08/11/07 - Move from MEGAN v2.0 to MEGAN v2.02 with updates.
+C                          See the update document.
+C  Jiang X.     05/07/12 - Update LDFs
+C=======================================================================
+
+      INTEGER,PARAMETER :: N_LDF_SPC  = 20
+      CHARACTER*16   LDF_SPC(N_LDF_SPC)
+      REAL           LDF_FCT(N_LDF_SPC)
+      INTEGER        LDF_MAP(N_LDF_SPC)
+
+      DATA     LDF_SPC(  1)      , LDF_FCT(  1), LDF_MAP(  1)
+     &       / 'ISOP            ', 0.999      , 1            /
+
+      DATA     LDF_SPC(  2)      , LDF_FCT(  2), LDF_MAP(  2)
+     &       / 'MYRC            ', 0.6        , 2            /
+
+      DATA     LDF_SPC(  3)      , LDF_FCT(  3), LDF_MAP(  3)
+     &       / 'SABI            ', 0.6         , 3            /
+
+      DATA     LDF_SPC(  4)      , LDF_FCT(  4), LDF_MAP(  4)
+     &       / 'LIMO            ', 0.4        , 4            /
+
+      DATA     LDF_SPC(  5)      , LDF_FCT(  5), LDF_MAP(  5)
+     &       / 'A_3CAR            ', 0.4        , 5            /
+
+      DATA     LDF_SPC(  6)      , LDF_FCT(  6), LDF_MAP(  6)
+     &       / 'OCIM            ', 0.4         , 6            /
+
+      DATA     LDF_SPC(  7)      , LDF_FCT(  7), LDF_MAP(  7)
+     &       / 'BPIN            ', 0.4         , 7            /
+
+      DATA     LDF_SPC(  8)      , LDF_FCT(  8), LDF_MAP(  8)
+     &       / 'APIN            ', 0.6         , 8            /
+
+      DATA     LDF_SPC(  9)      , LDF_FCT(  9), LDF_MAP(  9)
+     &       / 'OMTP            ', 0.4         , 9            /
+
+      DATA     LDF_SPC( 10)      , LDF_FCT( 10), LDF_MAP( 10)
+     &       / 'FARN            ', 0.5         , 10           /
+
+      DATA     LDF_SPC( 11)      , LDF_FCT( 11), LDF_MAP( 11)
+     &       / 'BCAR            ', 0.5         , 11           /
+
+      DATA     LDF_SPC( 12)      , LDF_FCT( 12), LDF_MAP( 12)
+     &       / 'OSQT            ', 0.5         , 12           /
+
+      DATA     LDF_SPC( 13)      , LDF_FCT( 13), LDF_MAP( 13)
+     &       / 'MBO             ', 0.999      , 13           /
+
+      DATA     LDF_SPC( 14)      , LDF_FCT( 14), LDF_MAP( 14)
+     &       / 'MEOH            ', 0.8        , 14           /
+
+      DATA     LDF_SPC( 15)      , LDF_FCT( 15), LDF_MAP( 15)
+     &       / 'ACTO            ', 0.2        , 15           /
+
+      DATA     LDF_SPC( 16)      , LDF_FCT( 16), LDF_MAP( 16)
+     &       / 'CO              ', 0.999      , 16           /
+
+      DATA     LDF_SPC( 17)      , LDF_FCT( 17), LDF_MAP( 17)
+     &       / 'NO              ', 0.0         , 17           /
+
+      DATA     LDF_SPC( 18)      , LDF_FCT( 18), LDF_MAP( 18)
+     &       / 'BIDER           ', 0.8         , 18           /
+
+      DATA     LDF_SPC( 19)      , LDF_FCT( 19), LDF_MAP( 19)
+     &       / 'STRESS          ', 0.8         , 19           /
+
+      DATA     LDF_SPC( 20)      , LDF_FCT( 20), LDF_MAP( 20)
+     &       / 'OTHER           ', 0.2         , 20           /
+
+C=======================================================================
+C  TEMPD_PRM.EXT
+C  This include file contains "temperature dependent" parameter for
+C  light-independent emissions.
+C
+C
+C  MEGAN v2.02
+C  INPUT version 210
+C
+C  History:
+C  Who          When       What
+C  ---------------------------------------------------------------------
+C  Tan          12/02/06 - Creates this file
+C  Guenther A.  08/11/07 - Move from MEGAN v2.0 to MEGAN v2.02 with updates.
+C                          See the update document.
+C=======================================================================
+
+      INTEGER,PARAMETER :: N_TDF_SPC  = 20
+      CHARACTER*16   TDF_SPC(N_TDF_SPC)
+      REAL           TDF_PRM(N_TDF_SPc)
+      INTEGER        TDF_MAP(N_TDF_SPc)
+
+      DATA     TDF_SPC(  1)      , TDF_PRM(  1), TDF_MAP(  1)
+     &       / 'ISOP            ', 0.13        , 1           /
+
+      DATA     TDF_SPC(  2)      , TDF_PRM(  2), TDF_MAP(  2)
+     &       / 'MYRC            ', 0.1         , 2           /
+
+      DATA     TDF_SPC(  3)      , TDF_PRM(  3), TDF_MAP(  3)
+     &       / 'SABI            ', 0.1         , 3           /
+
+      DATA     TDF_SPC(  4)      , TDF_PRM(  4), TDF_MAP(  4)
+     &       / 'LIMO            ', 0.1         , 4           /
+
+      DATA     TDF_SPC(  5)      , TDF_PRM(  5), TDF_MAP(  5)
+     &       / 'A_3CAR            ', 0.1         , 5           /
+
+      DATA     TDF_SPC(  6)      , TDF_PRM(  6), TDF_MAP(  6)
+     &       / 'OCIM            ', 0.1         , 6           /
+
+      DATA     TDF_SPC(  7)      , TDF_PRM(  7), TDF_MAP(  7)
+     &       / 'BPIN            ', 0.1         , 7           /
+      DATA     TDF_SPC(  8)      , TDF_PRM(  8), TDF_MAP(  8)
+     &       / 'APIN            ', 0.1         , 8           /
+
+      DATA     TDF_SPC(  9)      , TDF_PRM(  9), TDF_MAP(  9)
+     &       / 'OMTP            ', 0.1         , 9           /
+
+      DATA     TDF_SPC( 10)      , TDF_PRM( 10), TDF_MAP( 10)
+     &       / 'FARN            ', 0.17        , 10          /
+
+      DATA     TDF_SPC( 11)      , TDF_PRM( 11), TDF_MAP( 11)
+     &       / 'BCAR            ', 0.17        , 11          /
+
+      DATA     TDF_SPC( 12)      , TDF_PRM( 12), TDF_MAP( 12)
+     &       / 'OSQT            ', 0.17        , 12          /
+
+      DATA     TDF_SPC( 13)      , TDF_PRM( 13), TDF_MAP( 13)
+     &       / 'MBO             ', 0.13        , 13          /
+
+      DATA     TDF_SPC( 14)      , TDF_PRM( 14), TDF_MAP( 14)
+     &       / 'MEOH            ', 0.08        , 14          /
+      DATA     TDF_SPC( 15)      , TDF_PRM( 15), TDF_MAP( 15)
+     &       / 'ACTO            ', 0.10        , 15          /
+
+      DATA     TDF_SPC( 16)      , TDF_PRM( 16), TDF_MAP( 16)
+     &       / 'CO              ', 0.08        , 16          /
+
+      DATA     TDF_SPC( 17)      , TDF_PRM( 17), TDF_MAP( 17)
+     &       / 'NO              ', 0.10        , 17          /
+
+      DATA     TDF_SPC( 18)      , TDF_PRM( 18), TDF_MAP( 18)
+     &       / 'BIDER           ', 0.13        , 18          /
+
+      DATA     TDF_SPC( 19)      , TDF_PRM( 19), TDF_MAP( 19)
+     &       / 'STRESS          ', 0.1        , 19          /
+
+      DATA     TDF_SPC( 20)      , TDF_PRM( 20), TDF_MAP( 20)
+     &       / 'OTHER           ', 0.1        , 20          /
+c------------------------------------------------------------------------
+c  relative emission activity index
+c------------------------------------------------------------------------
+      INTEGER,PARAMETER :: N_REA_SPC  = 20
+      CHARACTER*16   REA_SPC(N_REA_SPC)
+      INTEGER           REA_INDEX(N_REA_SPC)
+      
+
+      DATA     REA_SPC(  1)      , REA_INDEX(  1)
+     &       / 'ISOP            ', 5                  /
+
+      DATA     REA_SPC(  2)      , REA_INDEX(  2)
+     &       / 'MYRC            ', 2                  /
+
+      DATA     REA_SPC(  3)      , REA_INDEX(  3)
+     &       / 'SABI            ', 2                  /
+
+      DATA     REA_SPC(  4)      , REA_INDEX(  4)
+     &       / 'LIMO            ', 2                  /
+
+      DATA     REA_SPC(  5)      , REA_INDEX(  5)
+     &       / 'A_3CAR            ', 2                  /
+
+      DATA     REA_SPC(  6)      , REA_INDEX(  6)
+     &       / 'OCIM            ', 2                   /
+
+      DATA     REA_SPC(  7)      , REA_INDEX(  7)
+     &       / 'BPIN            ', 2                   /
+
+      DATA     REA_SPC(  8)      , REA_INDEX(  8) 
+     &       / 'APIN            ', 2                   /
+
+      DATA     REA_SPC(  9)      , REA_INDEX(  9)
+     &       / 'OMTP            ', 2                   /
+
+      DATA     REA_SPC( 10)      , REA_INDEX( 10)
+     &       / 'FARN            ', 3                   /
+
+      DATA     REA_SPC( 11)      , REA_INDEX( 11)
+     &       / 'BCAR            ', 3                   /
+
+      DATA     REA_SPC( 12)      , REA_INDEX( 12)        
+     &       / 'OSQT            ', 3                    /
+
+      DATA     REA_SPC( 13)      , REA_INDEX( 13)
+     &       / 'MBO             ', 5                    /
+
+      DATA     REA_SPC( 14)      , REA_INDEX( 14)
+     &       / 'MEOH            ', 4                     /
+
+      DATA     REA_SPC( 15)      , REA_INDEX( 15)
+     &       / 'ACTO            ', 1                     /
+
+      DATA     REA_SPC( 16)      , REA_INDEX( 16)
+     &       / 'CO             ', 1                     /
+
+      DATA     REA_SPC( 17)      , REA_INDEX( 17)
+     &       / 'NO              ', 1                     /
+
+      DATA     REA_SPC( 18)      , REA_INDEX( 18)
+     &       / 'BIDER           ', 1                     /
+
+      DATA     REA_SPC( 19)      , REA_INDEX( 19)
+     &       / 'STRESS          ', 1                     /
+
+      DATA     REA_SPC( 20)      , REA_INDEX( 20)
+     &       / 'OTHER           ', 1                     /
+
+C=======================================================================
+C  REL_EM_ACT.EXT
+C  This include file contains "produciton and loss within canopy"
+C  factors.
+C
+C
+C  MEGAN v2.02
+C  INPUT version 200
+C
+C  History:
+C  Who          When       What
+C  ---------------------------------------------------------------------
+C  Tan          12/02/06 - Creates this file
+C  Tan          08/14/07 - Move from MEGAN v2.0 to MEGAN v2.02 with no update.
+C=======================================================================
+
+      INTEGER,PARAMETER :: N_CAT  = 5
+      REAL           Anew(N_CAT)
+      REAL           Agro(N_CAT)
+      REAL           Amat(N_CAT)
+      REAL           Aold(N_CAT)
+
+      DATA    Anew(  1),  Agro(  1),  Amat(  1),  Aold(  1)
+     &     /  1.0      ,  1.0      ,  1.0      ,  1.0       /
+
+      DATA    Anew(  2),  Agro(  2),  Amat(  2),  Aold(  2)
+     &     /  2.0      ,  1.8      ,  1.0     ,  1.05       /
+
+      DATA    Anew(  3),  Agro(  3),  Amat(  3),  Aold(  3)
+     &     /  0.4      ,  0.6      ,  1.0    ,  0.95       /
+
+      DATA    Anew(  4),  Agro(  4),  Amat(  4),  Aold(  4)
+     &     /  3.5      ,  3.0      ,  1.0     ,  1.2       /
+
+      DATA    Anew(  5),  Agro(  5),  Amat(  5),  Aold(  5)
+     &     /  0.05     ,  0.6      ,  1.0    ,  0.9       /
+
+C=======================================================================
+C  SPC_MGN.EXT
+C  This include file contains MEGAN species
+C
+C
+C
+C  MEGAN v2.02
+C  INPUT version 200
+C
+C  History:
+C  Who          When       What
+C  ---------------------------------------------------------------------
+C  Tan          12/02/06 - Creates this file
+C  Tan          08/14/07 - Move from MEGAN v2.0 to MEGAN v2.02 with no update.
+C=======================================================================
+
+      INTEGER,PARAMETER :: N_MGN_SPC  = 20
+      CHARACTER*16   MGN_SPC(N_MGN_SPC)
+      REAL           MGN_MWT(N_MGN_SPC)
+
+      DATA     MGN_SPC(  1), MGN_MWT(  1) / 'ISOP            ', 1.0    /
+
+      DATA     MGN_SPC(  2), MGN_MWT(  2) / 'MYRC            ', 1.0    /
+      DATA     MGN_SPC(  3), MGN_MWT(  3) / 'SABI            ', 1.0    /
+      DATA     MGN_SPC(  4), MGN_MWT(  4) / 'LIMO            ', 1.0    /
+      DATA     MGN_SPC(  5), MGN_MWT(  5) / 'A_3CAR          ', 1.0    /
+      DATA     MGN_SPC(  6), MGN_MWT(  6) / 'OCIM            ', 1.0    /
+      DATA     MGN_SPC(  7), MGN_MWT(  7) / 'BPIN            ', 1.0    /
+      DATA     MGN_SPC(  8), MGN_MWT(  8) / 'APIN            ', 1.0    /
+      DATA     MGN_SPC(  9), MGN_MWT(  9) / 'OMTP            ', 1.0    /
+
+      DATA     MGN_SPC( 10), MGN_MWT( 10) / 'FARN            ', 1.0    /
+      DATA     MGN_SPC( 11), MGN_MWT( 11) / 'BCAR            ', 1.0    /
+
+      DATA     MGN_SPC( 12), MGN_MWT( 12) / 'OSQT            ', 1.0    /
+
+      DATA     MGN_SPC( 13), MGN_MWT( 13) / 'MBO             ', 1.0    /
+      DATA     MGN_SPC( 14), MGN_MWT( 14) / 'MEOH            ', 1.0    /
+      DATA     MGN_SPC( 15), MGN_MWT( 15) / 'ACTO            ', 1.0    /
+      DATA     MGN_SPC( 16), MGN_MWT( 16) / 'CO              ', 1.0    /
+
+      DATA     MGN_SPC( 17), MGN_MWT( 17) / 'NO              ', 1.0    /
+
+      DATA     MGN_SPC( 18), MGN_MWT( 18) / 'BIDER           ', 1.0    /
+
+      DATA     MGN_SPC( 19), MGN_MWT( 19) / 'STRESS          ', 1.0    /
+
+      DATA     MGN_SPC( 20), MGN_MWT( 20) / 'OTHER           ', 1.0    /
+
+
+C=======================================================================
+C  PDT_LOS_CP.EXT
+C  This include file contains "produciton and loss within canopy"
+C  factors.
+C
+C
+C  MEGAN v2.02
+C  INPUT version 200
+C
+C  History:
+C  Who          When       What
+C  ---------------------------------------------------------------------
+C  Tan          12/02/06 - Creates this file
+C  Tan          08/14/07 - Move from MEGAN v2.0 to MEGAN v2.02 with no update.
+C=======================================================================
+
+      INTEGER,PARAMETER :: N_RHO_SPC  = 20
+      CHARACTER*16   RHO_SPC(N_RHO_SPC)
+      REAL           RHO_FCT(N_RHO_SPC)
+      INTEGER        RHO_MAP(N_RHO_SPC)
+
+      DATA     RHO_SPC(  1)      , RHO_FCT(  1), RHO_MAP(  1)
+     &       / 'ISOP            ',   1.0       , 1           /
+
+      DATA     RHO_SPC(  2)      , RHO_FCT(  2), RHO_MAP(  2)
+     &       / 'MYRC            ',   1.0       , 2           /
+
+      DATA     RHO_SPC(  3)      , RHO_FCT(  3), RHO_MAP(  3)
+     &       / 'SABI            ',   1.0       , 3           /
+      DATA     RHO_SPC(  4)      , RHO_FCT(  4), RHO_MAP(  4)
+     &       / 'LIMO            ',   1.0       , 4           /
+
+      DATA     RHO_SPC(  5)      , RHO_FCT(  5), RHO_MAP(  5)
+     &       / 'A_3CAR            ',   1.0       , 5           /
+
+      DATA     RHO_SPC(  6)      , RHO_FCT(  6), RHO_MAP(  6)
+     &       / 'OCIM            ',   1.0       , 6           /
+
+      DATA     RHO_SPC(  7)      , RHO_FCT(  7), RHO_MAP(  7)
+     &       / 'BPIN            ',   1.0       , 7           /
+
+      DATA     RHO_SPC(  8)      , RHO_FCT(  8), RHO_MAP(  8)
+     &       / 'APIN            ',   1.0       , 8           /
+
+      DATA     RHO_SPC(  9)      , RHO_FCT(  9), RHO_MAP(  9)
+     &       / 'OMTP            ',   1.0       , 9           /
+
+      DATA     RHO_SPC( 10)      , RHO_FCT( 10), RHO_MAP( 10)
+     &       / 'FARN            ',   1.0       , 10          /
+
+      DATA     RHO_SPC( 11)      , RHO_FCT( 11), RHO_MAP( 11)
+     &       / 'BCAR            ',   1.0       , 11          /
+
+      DATA     RHO_SPC( 12)      , RHO_FCT( 12), RHO_MAP( 12)
+     &       / 'OSQT            ',   1.0       , 12          /
+
+      DATA     RHO_SPC( 13)      , RHO_FCT( 13), RHO_MAP( 13)
+     &       / 'MBO             ',   1.0       , 13          /
+      DATA     RHO_SPC( 14)      , RHO_FCT( 14), RHO_MAP( 14)
+     &       / 'MEOH            ',   1.0       , 14          /
+
+      DATA     RHO_SPC( 15)      , RHO_FCT( 15), RHO_MAP( 15)
+     &       / 'ACTO            ',   1.0       , 15          /
+
+      DATA     RHO_SPC( 16)      , RHO_FCT( 16), RHO_MAP( 16)
+     &       / 'CO             ',   1.0       , 16          /
+
+      DATA     RHO_SPC( 17)      , RHO_FCT( 17), RHO_MAP( 17)
+     &       / 'NO              ',   1.0       , 17          /
+
+      DATA     RHO_SPC( 18)      , RHO_FCT( 18), RHO_MAP( 18)
+     &       / 'BIDER           ',   1.0       , 18          /
+
+      DATA     RHO_SPC( 19)      , RHO_FCT( 19), RHO_MAP( 19)
+     &       / 'STRESS          ',   1.0       , 19          /
+
+      DATA     RHO_SPC( 20)      , RHO_FCT( 20), RHO_MAP( 20)
+     &       / 'OTHER           ',   1.0       , 20          /
+
+C  TEMPD_PRM
+C  This include file contains MEGAN species
+C
+C
+C
+C  MEGAN v2.1
+C
+C  History:
+C  Who          When       What
+C  ---------------------------------------------------------------------
+C  Xuemei      06/15/2009 - Creates this file
+C=======================================================================
+
+      INTEGER,PARAMETER :: N_PRM_SPC  = 20
+      REAL           CT1( N_PRM_SPC)
+      REAL           Cceo(N_PRM_SPC)
+
+      DATA    CT1(1),Cceo (1)    /  95.0, 2.0  /
+      DATA    CT1(2),Cceo (2)    /  80.0, 1.83  /
+      DATA    CT1(3),Cceo (3)    /  80.0, 1.83  /
+      DATA    CT1(4),Cceo (4)    /  80.0, 1.83  /
+      DATA    CT1(5),Cceo (5)    /  80.0, 1.83  /
+      DATA    CT1(6),Cceo (6)    /  80.0, 1.83  /
+      DATA    CT1(7),Cceo (7)    /  80.0, 1.83  /
+      DATA    CT1(8),Cceo (8)    /  80.0, 1.83  /
+      DATA    CT1(9),Cceo (9)    /  80.0, 1.83  /
+      DATA    CT1(10),Cceo (10)    / 130.0, 2.37  /
+      DATA    CT1(11),Cceo (11)    / 130.0, 2.37  /
+      DATA    CT1(12),Cceo (12)    / 130.0, 2.37  /
+      DATA    CT1(13),Cceo (13)    /  95.0, 2.0  /
+      DATA    CT1(14),Cceo (14)    /  60.0, 1.6  /
+      DATA    CT1(15),Cceo (15)    /  80.0, 1.83  /
+      DATA    CT1(16),Cceo (16)    /  60.0, 1.6  /
+      DATA    CT1(17),Cceo (17)    /  80.0, 1.83  /
+      DATA    CT1(18),Cceo (18)    /  95.0, 2.0  /
+      DATA    CT1(19),Cceo (19)    /  80.0, 1.83  /
+      DATA    CT1(20),Cceo (20)    /  80.0, 1.83  /
+
+!=======================================================================
+!  PFT_MGN.EXT
+!  This include file contains MEGAN species
+!
+!
+!
+!  MEGAN v2.10
+!  INPUT version XXX
+!
+!  History:
+!  Who          When       What
+!  ---------------------------------------------------------------------
+!  Tan          07/07/11 - Creates this file for MEGANv2.10
+!=======================================================================
+
+      INTEGER,PARAMETER :: N_MGN_PFT = 16
+      CHARACTER*16   MGN_PFT(N_MGN_PFT)
+      CHARACTER*16   MGN_NAM(N_MGN_PFT)
+      REAL           MGN_DUM(N_MGN_PFT)
+
+      DATA     MGN_PFT(  1), MGN_DUM(  1) / 'NT_EG_TEMP      ', 1.0    /
+      DATA     MGN_PFT(  2), MGN_DUM(  2) / 'NT_DC_BORL      ', 1.0    /
+      DATA     MGN_PFT(  3), MGN_DUM(  3) / 'NT_EG_BORL      ', 1.0    /
+      DATA     MGN_PFT(  4), MGN_DUM(  4) / 'BT_EG_TROP      ', 1.0    /
+      DATA     MGN_PFT(  5), MGN_DUM(  5) / 'BT_EG_TEMP      ', 1.0    /
+      DATA     MGN_PFT(  6), MGN_DUM(  6) / 'BT_DC_TROP      ', 1.0    /
+      DATA     MGN_PFT(  7), MGN_DUM(  7) / 'BT_DC_TEMP      ', 1.0    /
+      DATA     MGN_PFT(  8), MGN_DUM(  8) / 'BT_DC_BORL      ', 1.0    /
+      DATA     MGN_PFT(  9), MGN_DUM(  9) / 'SB_EG_TEMP      ', 1.0    /
+      DATA     MGN_PFT( 10), MGN_DUM( 10) / 'SB_DC_TEMP      ', 1.0    /
+      DATA     MGN_PFT( 11), MGN_DUM( 11) / 'SB_DC_BORL      ', 1.0    /
+      DATA     MGN_PFT( 12), MGN_DUM( 12) / 'GS_C3_COLD      ', 1.0    /
+      DATA     MGN_PFT( 13), MGN_DUM( 13) / 'GS_C3_COOL      ', 1.0    /
+      DATA     MGN_PFT( 14), MGN_DUM( 14) / 'GS_C3_WARM      ', 1.0    /
+      DATA     MGN_PFT( 15), MGN_DUM( 15) / 'CORN            ', 1.0    /
+      DATA     MGN_PFT( 16), MGN_DUM( 16) / 'CROP            ', 1.0    /
+
+      DATA     MGN_NAM(  1) /'Needleaf evergreen temperate tree   '/
+      DATA     MGN_NAM(  2) /'Needleaf deciduous boreal tree      '/
+      DATA     MGN_NAM(  3) /'Needleaf evergreen boreal tree      '/
+      DATA     MGN_NAM(  4) /'Broadleaf evergreen tropical tree   '/
+      DATA     MGN_NAM(  5) /'Broadleaf evergreen temperate tree  '/
+      DATA     MGN_NAM(  6) /'Broadleaf deciduous tropical tree   '/
+      DATA     MGN_NAM(  7) /'Broadleaf deciduous temperate tree  '/
+      DATA     MGN_NAM(  8) /'Broadleaf deciduous boreal tree     '/
+      DATA     MGN_NAM(  9) /'Broadleaf evergreen temperate shrub '/
+      DATA     MGN_NAM( 10) /'Broadleaf deciduous temperate shrub '/
+      DATA     MGN_NAM( 11) /'Broadleaf deciduous boreal shrub    '/
+      DATA     MGN_NAM( 12) /'Cold C3 grass                       '/
+      DATA     MGN_NAM( 13) /'Cool C3 grass                       '/
+      DATA     MGN_NAM( 14) /'Warm C3 grass                       '/
+      DATA     MGN_NAM( 15) /'Corn                                '/
+      DATA     MGN_NAM( 16) /'Other crops                         '/
+                                      
+

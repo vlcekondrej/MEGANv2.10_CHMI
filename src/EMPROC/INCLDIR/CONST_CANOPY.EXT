@@ -1,0 +1,63 @@
+      INTEGER,PARAMETER :: Layers =5
+      REAL,PARAMETER ::                     
+     &     ConvertWm2toUmolm2s = 4.766,       ! Convert radiation from [W/m2] to [umol/m2/s1]
+     &     SolarConstant       = 1367,        ! Solar constant [W/m2]
+     &     WaterAirRatio       = 18.016/28.97  ! Ratio between water and air molecules
+
+          REAL ,PARAMETER :: pstd_Sun =200.0, pstd_Shade =50.0
+           REAL ,PARAMETER :: Cce =0.56  
+    
+C=======================================================================
+C  CANOPY.EXT
+C  This include file contains MEGAN species
+C
+C  Who                   When       What
+C  ---------------------------------------------------------------------
+C  Xuemei Wang          06/16/2009 - Creates this file
+C=======================================================================
+
+      INTEGER,PARAMETER :: N_MGN_SPC  = 20
+        CHARACTER*16   MGN_SPC(N_MGN_SPC)
+       REAL        CLeo ( N_MGN_SPC)
+        REAL       Ctm1 ( N_MGN_SPC)
+
+      DATA     MGN_SPC(  1) , CLeo(1) ,   Ctm1(1) 
+     &         / 'ISOP ' , 2.0, 95.0   /
+      DATA     MGN_SPC(  2), CLeo(2) ,   Ctm1(2)
+     &         / 'MYRC ', 1.83, 80.0   /
+      DATA     MGN_SPC(  3), CLeo(3) ,   Ctm1(3)
+     &         / 'SABI ', 1.83, 80.0   / 
+      DATA     MGN_SPC(  4), CLeo(4) ,   Ctm1(4)
+     &        / 'LIMO  ',  1.83, 80.0  /
+      DATA     MGN_SPC(  5), CLeo(5) ,   Ctm1(5) 
+     &        / 'A_3CAR ',  1.83, 80.0    /
+      DATA     MGN_SPC(  6), CLeo(6) ,   Ctm1(6)
+     &        / 'OCIM    ', 1.83, 80.0    /
+      DATA     MGN_SPC(  7), CLeo(7) ,   Ctm1(7)
+     &        / 'BPIN    ',  1.83, 80.0    /
+      DATA     MGN_SPC(  8), CLeo(8) ,   Ctm1(8) 
+     &        / 'APIN   ',  1.83, 80.0    /
+      DATA     MGN_SPC(  9), CLeo(9) ,   Ctm1(9) 
+     &        / 'OMTP   ',   1.83, 80.0   /
+      DATA     MGN_SPC( 10), CLeo(10) ,   Ctm1(10)
+     &        / 'FARN   ',  2.37,130.0    /
+      DATA     MGN_SPC( 11), CLeo(11),   Ctm1(11) 
+     &        / 'BCAR   ',  2.37,130.0    /
+      DATA     MGN_SPC( 12), CLeo(12) ,   Ctm1(12)
+     &        / 'OSQT   ',  2.37,130.0    /
+      DATA     MGN_SPC( 13), CLeo(13) ,   Ctm1(13) 
+     &        / 'MBO    ',  2.0, 95.0    /
+      DATA     MGN_SPC( 14), CLeo(14) ,   Ctm1(14) 
+     &        / 'MEOH   ',  1.6, 60.0    /
+      DATA     MGN_SPC( 15), CLeo(15) ,   Ctm1(15)
+     &        / 'ACTO   ',  1.83, 80.0    /
+      DATA     MGN_SPC( 16), CLeo(16) ,   Ctm1(16)
+     &        / 'CO     ',  1.6, 60.0    /
+      DATA     MGN_SPC( 17), CLeo(17) ,   Ctm1(17)
+     &        / 'NO     ',  1.83, 80.0    /
+      DATA     MGN_SPC( 18), CLeo(18) ,   Ctm1(18) 
+     &        / 'BIDER  ',  2.0, 95.0    /
+      DATA     MGN_SPC( 19), CLeo(19) ,   Ctm1(19) 
+     &        / 'STRESS ', 1.83, 80.0    /
+      DATA     MGN_SPC( 20), CLeo(20) ,   Ctm1(20)
+     &        / 'OTHER  ', 1.83, 80.0     /

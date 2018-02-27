@@ -1,0 +1,22 @@
+#!/bin/csh -f
+
+if ($#argv == 0) then
+  echo " makecombo [case name]"
+else
+  if ($argv == 'wmap') then
+    echo " make new exe with  EFS_PFT.EXT.wmap"
+    ln -sf EFS_PFT.EXT.wmap INCLDIR/EFS_PFT.EXT
+  endif
+  if ($argv == 'womap') then
+    echo " make new exe with  EFS_PFT.EXT.womap"
+    ln -sf EFS_PFT.EXT.womap INCLDIR/EFS_PFT.EXT
+  endif
+
+  echo " making new exe"
+  ls -al INCLDIR/EFS_PFT.EXT
+  rm *.o
+  make
+  mv -f mgn2mech mgn2mech.$argv
+
+endif
+

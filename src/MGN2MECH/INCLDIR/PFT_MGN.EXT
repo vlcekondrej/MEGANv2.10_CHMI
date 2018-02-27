@@ -1,0 +1,53 @@
+!=======================================================================
+!  PFT_MGN.EXT
+!  This include file contains MEGAN species
+!
+!
+!
+!  MEGAN v2.10
+!  INPUT version XXX
+!
+!  History:
+!  Who          When       What
+!  ---------------------------------------------------------------------
+!  Tan          07/07/11 - Creates this file for MEGANv2.10
+!=======================================================================
+
+      INTEGER,PARAMETER :: N_MGN_PFT = 16
+      CHARACTER*16   MGN_PFT(N_MGN_PFT)
+      CHARACTER*16   MGN_NAM(N_MGN_PFT)
+      REAL           MGN_DUM(N_MGN_PFT)
+
+      DATA     MGN_PFT(  1), MGN_DUM(  1) / 'NT_EG_TEMP      ', 1.0    /
+      DATA     MGN_PFT(  2), MGN_DUM(  2) / 'NT_DC_BORL      ', 1.0    /
+      DATA     MGN_PFT(  3), MGN_DUM(  3) / 'NT_EG_BORL      ', 1.0    /
+      DATA     MGN_PFT(  4), MGN_DUM(  4) / 'BT_EG_TROP      ', 1.0    /
+      DATA     MGN_PFT(  5), MGN_DUM(  5) / 'BT_EG_TEMP      ', 1.0    /
+      DATA     MGN_PFT(  6), MGN_DUM(  6) / 'BT_DC_TROP      ', 1.0    /
+      DATA     MGN_PFT(  7), MGN_DUM(  7) / 'BT_DC_TEMP      ', 1.0    /
+      DATA     MGN_PFT(  8), MGN_DUM(  8) / 'BT_DC_BORL      ', 1.0    /
+      DATA     MGN_PFT(  9), MGN_DUM(  9) / 'SB_EG_TEMP      ', 1.0    /
+      DATA     MGN_PFT( 10), MGN_DUM( 10) / 'SB_DC_TEMP      ', 1.0    /
+      DATA     MGN_PFT( 11), MGN_DUM( 11) / 'SB_DC_BORL      ', 1.0    /
+      DATA     MGN_PFT( 12), MGN_DUM( 12) / 'GS_C3_COLD      ', 1.0    /
+      DATA     MGN_PFT( 13), MGN_DUM( 13) / 'GS_C3_COOL      ', 1.0    /
+      DATA     MGN_PFT( 14), MGN_DUM( 14) / 'GS_C3_WARM      ', 1.0    /
+      DATA     MGN_PFT( 15), MGN_DUM( 15) / 'CROP            ', 1.0    /
+      DATA     MGN_PFT( 16), MGN_DUM( 16) / 'CORN            ', 1.0    /
+
+      DATA     MGN_NAM(  1) /'Needleaf evergreen temperate tree   '/
+      DATA     MGN_NAM(  2) /'Needleaf deciduous boreal tree      '/
+      DATA     MGN_NAM(  3) /'Needleaf evergreen boreal tree      '/
+      DATA     MGN_NAM(  4) /'Broadleaf evergreen tropical tree   '/
+      DATA     MGN_NAM(  5) /'Broadleaf evergreen temperate tree  '/
+      DATA     MGN_NAM(  6) /'Broadleaf deciduous tropical tree   '/
+      DATA     MGN_NAM(  7) /'Broadleaf deciduous temperate tree  '/
+      DATA     MGN_NAM(  8) /'Broadleaf deciduous boreal tree     '/
+      DATA     MGN_NAM(  9) /'Broadleaf evergreen temperate shrub '/
+      DATA     MGN_NAM( 10) /'Broadleaf deciduous temperate shrub '/
+      DATA     MGN_NAM( 11) /'Broadleaf deciduous boreal shrub    '/
+      DATA     MGN_NAM( 12) /'Cold C3 grass                       '/
+      DATA     MGN_NAM( 13) /'Cool C3 grass                       '/
+      DATA     MGN_NAM( 14) /'Warm C3 grass                       '/
+      DATA     MGN_NAM( 15) /'Other crops                         '/
+      DATA     MGN_NAM( 16) /'Corn                                '/

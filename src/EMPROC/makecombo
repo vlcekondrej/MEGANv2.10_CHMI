@@ -1,0 +1,11 @@
+#!/bin/csh -f
+
+if ($#argv == 0) then
+  echo " makecombo [case name]"
+else
+  echo " make new exe"
+  rm *.o
+  make
+  mv -f emproc emproc.$argv
+endif
+

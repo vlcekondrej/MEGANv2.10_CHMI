@@ -1,0 +1,9 @@
+!  coords --line:  name; type, P-alpha, P-beta, P-gamma, xcent, ycent
+'LAM_39N97W'
+2, 33.0D0, 45.D0, -97.D0, -97.D0, 39.D0
+' '  !  end coords.  grids:  name; xorig,yorig,xcell,ycell,ncols,nrows,nthik
+
+'USA36km'
+'LAM_39N97W'  -2664000.000  -1905428.125     36000.000     36000.000 148 112   1
+
+' '  !  end grids.
