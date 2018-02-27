@@ -1,10 +1,9 @@
 SHELL = /bin/sh
-FC = pgf90
-FFLAGS = -O2 -Mdalign -Mnoframe -byteswapio -Mlfs -Bstatic_pgi
+FC = $(FFC)
+FFLAGS = $(FFCFLGS) $(FFCFLG_UNFMT)
 PROGRAM = ioapi2uam
-LIBS = -L/data3/home/xjiang/bin/ioapi_3.1/Linux2_x86pg_pgcc_nomp -lioapi \
-       -L/usr/local/netcdf-4.1.1/lib -lnetcdf
-INCLUDE = -I/data3/home/xjiang/bin/ioapi_3.1/ioapi/fixed_src
+LIBS = $(IOAPI2UAM_LIBS)
+INCLUDE = $(IOAPI2UAM_INC)
 
 RAW = $(PROGRAM).o
 

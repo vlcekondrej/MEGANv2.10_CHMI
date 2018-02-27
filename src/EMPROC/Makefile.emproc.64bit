@@ -1,12 +1,10 @@
 SHELL=/bin/sh
-FC= pgf90
-FFLAGS= -O -Mvect=sse -Mextend -Msecond_underscore -Mlfs -Bstatic_pgi
+FC= $(FFC)
+FFLAGS= $(FFCFLGS)
 
 PROGRAM= emproc
-LIBS = -L/data3/home/xjiang/bin/ioapi_3.1/Linux2_x86pg_pgcc_nomp -lioapi \
-       -L/usr/local/netcdf-4.1.1/lib -lnetcdf
-INCLUDE = -I/data3/home/xjiang/bin/ioapi_3.1/ioapi/fixed_src \
-          -I/usr/local/netcdf-4.1.1/include \
+LIBS = $(EMPROC_LIBS)
+INCLUDE = $(EMPROC_INC) \
           -I$(CURDIR)/INCLDIR
 
 OBJS = \

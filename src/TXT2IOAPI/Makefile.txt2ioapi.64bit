@@ -1,11 +1,9 @@
 SHELL = /bin/sh
-FC = pgf90
-FFLAGS= -O -Mvect=sse -Mextend -Msecond_underscore -Bstatic_pgi -Mlfs
+FC = $(FFC)
+FFLAGS= $(FFCFLGS) 
 PROGRAM = txt2ioapi
-LIBS = -L/data3/home/xjiang/bin/ioapi_3.1/Linux2_x86pg_pgcc_nomp -lioapi \
-       -L/usr/local/netcdf-4.1.1/lib -lnetcdf
-INCLUDE = -I/data3/home/xjiang/bin/ioapi_3.1/ioapi/fixed_src \
-          -I/usr/local/netcdf-4.1.1/include \
+LIBS    = $(TEXT2IOAPI_LIBS)
+INCLUDE = $(TEXT2IOAPI_INC) \
           -I$(CURDIR)/INCLDIR
 
 RAW = parsline.o \

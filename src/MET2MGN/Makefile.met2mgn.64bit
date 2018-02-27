@@ -1,7 +1,7 @@
-PGF90 = pgf90
-FCFLGS = -O -Mextend -Mlfs -Msecond_underscore
-FCFLGS2 = -O -Mbyteswapio -Mextend -Mlfs -Msecond_underscore
-LNKFLGS = -Bstatic_pgi
+FC = $(FFC)
+FCFLGS = $(FFCFLGS)
+FCFLGS2 =$(FFCFLGS) $(FFCFLG_UNFMT)
+LNKFLGS = $(FFCLNKFLGS)
 
 OBJCTS = \
 met2mgn.o \
@@ -19,38 +19,37 @@ juldate.o \
 utmgeo.o
 
 
-LIBS = -L/data3/home/xjiang/bin/ioapi_3.1/Linux2_x86pg_pgcc_nomp -lioapi \
-       -L/usr/local/netcdf-4.1.1/lib -lnetcdf
-INC = -I/data3/home/xjiang/bin/ioapi_3.1/ioapi/fixed_src
+LIBS = $(MET2MGN_LIBS)
+INC  = $(MET2MGN_INC)
 
 met2mgn: $(OBJCTS)
-	$(PGF90) $(LNKFLAGS) $(OBJCTS) $(LIBS) -o met2mgn
+	$(FC) $(LNKFLAGS) $(OBJCTS) $(LIBS) -o met2mgn
 met2mgn.o:
-	$(PGF90) -c $(FCFLGS2) $(INC) met2mgn.f
+	$(FC) -c $(FCFLGS2) $(INC) met2mgn.f
 readpar.o:
-	$(PGF90) -c $(FCFLGS) $(INC) readpar.f
+	$(FC) -c $(FCFLGS) $(INC) readpar.f
 readmcip.o:
-	$(PGF90) -c $(FCFLGS2) $(INC) readmcip.f
+	$(FC) -c $(FCFLGS2) $(INC) readmcip.f
 micromet.o:
-	$(PGF90) -c $(FCFLGS2) $(INC) micromet.f
+	$(FC) -c $(FCFLGS2) $(INC) micromet.f
 caldate.o:
-	$(PGF90) -c $(FCFLGS2) $(INC) caldate.f
+	$(FC) -c $(FCFLGS2) $(INC) caldate.f
 lcpgeo.o:
-	$(PGF90) -c $(FCFLGS2) ${INC} lcpgeo.f
+	$(FC) -c $(FCFLGS2) ${INC} lcpgeo.f
 interp_lcp.o:
-	$(PGF90) -c $(FCFLGS2) ${INC} interp_lcp.f
+	$(FC) -c $(FCFLGS2) ${INC} interp_lcp.f
 procmm5.o:
-	$(PGF90) -c $(FCFLGS2) ${INC} procmm5.f
+	$(FC) -c $(FCFLGS2) ${INC} procmm5.f
 readmm5.o:
-	$(PGF90) -c $(FCFLGS2) ${INC} readmm5.f
+	$(FC) -c $(FCFLGS2) ${INC} readmm5.f
 xtod.o:
-	$(PGF90) -c $(FCFLGS2) ${INC} xtod.f
+	$(FC) -c $(FCFLGS2) ${INC} xtod.f
 vertmap.o:
-	$(PGF90) -c $(FCFLGS2) ${INC} vertmap.f
+	$(FC) -c $(FCFLGS2) ${INC} vertmap.f
 juldate.o:
-	$(PGF90) -c $(FCFLGS2) ${INC} juldate.f
+	$(FC) -c $(FCFLGS2) ${INC} juldate.f
 utmgeo.o:
-	$(PGF90) -c $(FCFLGS2) ${INC} utmgeo.f
+	$(FC) -c $(FCFLGS2) ${INC} utmgeo.f
 clean:
 	rm -rf *.o met2mgn
 

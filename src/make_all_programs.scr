@@ -7,19 +7,53 @@
 # Modified by bkoo 06/20/07 - added IOAPI2UAM
 ##########################################################
 
-source /data3/home/xjiang/MEGAN/MEGANv2.10/setcase.csh
+source ../setcase.csh
 if ( $#argv != 1 ) then
-echo 'USAGE: $MGNSRC/make_all_program.scr [32bit|64bit'
+echo 'USAGE: $MGNSRC/make_all_program.scr [32bit|64bit]'
 exit -1
 endif
 
-source ../setcase.csh
+#setenv FFC "pgf90"
+#setenv FFCFLGS "-O -Mextend -Mlfs -Msecond_underscore"
+#setenv FFCFLG_UNFMT "-Mbyteswapio"
+#setenv LNKFLGS "-Bstatic_pgi"
+
+#TEXT2IOAPI -O -Mvect=sse -Mextend -Msecond_underscore -Bstatic_pgi -Mlfs
+
+setenv FFC "gfortran"
+setenv FFCFLGS "-O3 -ffixed-line-length-none -ffree-line-length-none -mcmodel=medium -fopenmp"
+setenv FFCFLG_UNFMT "-fconvert=big-endian"
+setenv FFCLNKFLGS "-static-libgfortran"
+
+set NCDIR="/storage/install/netcdf/netcdf-4.6.0/build_gfort_no-netcdf4-dap"
+set NFDIR="/storage/install/netcdf/netcdf-fortran-4.4.4/build_gfort_netcdf-4.6.0_no-netcdf4-dap"
+set IO_INST="/storage/install/ioapi/ioapi-3.2/Linux2_x86_64gfort_medium"
+set IO_FSRC="/storage/install/ioapi/ioapi-3.2/ioapi/fixed_src"
+set OMPLIB="-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -lgomp"
+
+
+setenv MET2MGN_LIBS    "-L$IO_INST -lioapi -L$NFDIR/lib -lnetcdff -L$NCDIR/lib -lnetcdf $OMPLIB"
+setenv MET2MGN_INC     "-I$IO_FSRC"
+
+setenv TEXT2IOAPI_LIBS "-L$IO_INST -lioapi -L$NFDIR/lib -lnetcdff -L$NCDIR/lib -lnetcdf $OMPLIB"
+setenv TEXT2IOAPI_INC  "-I$IO_FSRC -I$NCDIR/include"
+
+setenv EMPROC_LIBS     "-L$IO_INST -lioapi -L$NFDIR/lib -lnetcdff -L$NCDIR/lib -lnetcdf $OMPLIB"
+setenv EMPROC_INC      "-I$IO_FSRC -I$NCDIR/include"
+
+setenv MGN2MECH_LIBS   "-L$IO_INST -lioapi -L$NFDIR/lib -lnetcdff -L$NCDIR/lib -lnetcdf $OMPLIB"
+setenv MGN2MECH_INC    "-I$IO_FSRC -I$NCDIR/include"
+
+setenv IOAPI2UAM_LIBS  "-L$IO_INST -lioapi -L$NFDIR/lib -lnetcdff -L$NCDIR/lib -lnetcdf $OMPLIB"
+setenv IOAPI2UAM_INC   "-I$IO_FSRC"
+
 echo "Removing *.o"
 rm $MGNSRC/MET2MGN/*.o
 rm $MGNSRC/TXT2IOAPI/*.o
 rm $MGNSRC/EMPROC/*.o
 rm $MGNSRC/MGN2MECH/*.o
 rm $MGNSRC/IOAPI2UAM/*.o
+#exit
 
 
 echo "Make all programs"
