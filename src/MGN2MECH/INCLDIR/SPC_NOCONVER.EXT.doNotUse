@@ -495,9 +495,9 @@
       DATA  SPCA_NAM(110), SPCA_MAP(110), MG20_NAM(110), MG20_MAP(110)
      &    / 'ethane  ', 110   , 'OTHER     ', 20            /
       DATA  SPCA_NAM(111), SPCA_MAP(111), MG20_NAM(111), MG20_MAP(111)
-     &    / 'ethene  ', 111   , 'STRESS     ', 19            /
+     &    / 'ethene  ', 111   , 'STRESS     ', 20            /
       DATA  SPCA_NAM(112), SPCA_MAP(112), MG20_NAM(112), MG20_MAP(112)
-     &    / 'hydrogen_cyanide', 112   , 'STRESS     ', 19            /
+     &    / 'hydrogen_cyanide', 112   , 'STRESS     ', 20            /
       DATA  SPCA_NAM(113), SPCA_MAP(113), MG20_NAM(113), MG20_MAP(113)
      &    / 'propane ', 113   , 'OTHER     ', 20            /
       DATA  SPCA_NAM(114), SPCA_MAP(114), MG20_NAM(114), MG20_MAP(114)
@@ -527,9 +527,9 @@
       DATA  SPCA_NAM(126), SPCA_MAP(126), MG20_NAM(126), MG20_MAP(126)
      &    / 'PPPP_2s ', 126   , 'OTHER     ', 20            /
       DATA  SPCA_NAM(127), SPCA_MAP(127), MG20_NAM(127), MG20_MAP(127)
-     &    / 'A_2met_nonatriene ', 127   , 'STRESS     ', 19            /
+     &    / 'A_2met_nonatriene ', 127   , 'STRESS     ', 20            /
       DATA  SPCA_NAM(128), SPCA_MAP(128), MG20_NAM(128), MG20_MAP(128)
-     &    / 'met_salicylate', 128   , 'STRESS     ', 19            /
+     &    / 'met_salicylate', 128   , 'STRESS     ', 20            /
       DATA  SPCA_NAM(129), SPCA_MAP(129), MG20_NAM(129), MG20_MAP(129)
      &    / 'indole  ', 129   , 'STRESS     ', 19            /
       DATA  SPCA_NAM(130), SPCA_MAP(130), MG20_NAM(130), MG20_MAP(130)
@@ -574,4 +574,4 @@
      &    / 'ipsenol', 149   , 'OMTP    ',  9             /
       DATA  SPCA_NAM(150), SPCA_MAP(150), MG20_NAM(150), MG20_MAP(150)
      &    / 'Napthalene', 150   , 'OTHER     ', 20            /
- 
+
