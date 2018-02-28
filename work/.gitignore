@@ -1,5 +1,6 @@
-GRIDDESC
-run.emproc.v210.csh
-run.met2mgn.v210.csh
-run.mgn2mech.v210.csh
-run.txt2ioapi.v210.csh
+*
+!GRIDDESC.sample
+!run.emproc.v210.csh.sample
+!run.met2mgn.v210.csh.sample
+!run.mgn2mech.v210.csh.sample
+!run.txt2ioapi.v210.csh.sample
