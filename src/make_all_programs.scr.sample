@@ -27,8 +27,8 @@ setenv FFCLNKFLGS "-static-libgfortran"
 
 set NCDIR="/storage/install/netcdf/netcdf-4.6.0/build_gfort_no-netcdf4-dap"
 set NFDIR="/storage/install/netcdf/netcdf-fortran-4.4.4/build_gfort_netcdf-4.6.0_no-netcdf4-dap"
-set IO_INST="/storage/install/ioapi/ioapi-3.2/Linux2_x86_64gfort_medium"
-set IO_FSRC="/storage/install/ioapi/ioapi-3.2/ioapi/fixed_src"
+set IO_INST="/storage/install/ioapi/ioapi-3.1/Linux2_x86_64gfort_medium"
+set IO_FSRC="/storage/install/ioapi/ioapi-3.1/ioapi/fixed_src"
 set OMPLIB="-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 -lgomp"
 
 
